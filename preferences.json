@@ -2,5 +2,20 @@
   "name": "Expanding Popup ZenMenu",
   "description": "Animated expanding menu for Zen/Sine.",
   "version": "1.0.0",
-  "author": "T3lluz"
+  "author": "T3lluz",
+  "settings": {
+    "animationSpeed": {
+      "type": "number",
+      "label": "Animation Speed (ms)",
+      "default": 350,
+      "min": 100,
+      "max": 2000,
+      "step": 10
+    },
+    "forceOverride": {
+      "type": "boolean",
+      "label": "Force Override Animation CSS",
+      "default": true
+    }
+  }
 } 

@@ -1,5 +1,34 @@
 // Zen menu expanding popup animation
 (function() {
+  // Read settings from preferences.json (Sine/Zen exposes them on window.modPrefs or similar)
+  const defaultSpeed = 350;
+  let animationSpeed = defaultSpeed;
+  let forceOverride = true;
+  try {
+    const prefs = window.modPrefs || window.preferences || {};
+    if (prefs.animationSpeed) animationSpeed = prefs.animationSpeed;
+    if (prefs.forceOverride !== undefined) forceOverride = prefs.forceOverride;
+  } catch (e) {}
+
+  // Inject CSS override if needed
+  function injectAnimationCSS() {
+    const styleId = 'zen-popup-animation-override';
+    if (document.getElementById(styleId)) return;
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.textContent = `
+      #PanelUI-popup.zen-popup-animating, #appMenu-popup.zen-popup-animating {
+        transition: height ${animationSpeed}ms cubic-bezier(0.4, 0.2, 0.55, 1) !important;
+        will-change: height !important;
+        overflow: hidden !important;
+      }
+      #PanelUI-popup.zen-popup-expanded, #appMenu-popup.zen-popup-expanded {
+        /* Optionally add more styles here */
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   // Utility to animate popup height
   function animateZenPopup(popup) {
     if (!popup) return;
@@ -31,6 +60,7 @@
 
   // Attach to menu popup open events
   function setupZenPopupAnimation() {
+    if (forceOverride) injectAnimationCSS();
     const popups = [
       document.getElementById('PanelUI-popup'),
       document.getElementById('appMenu-popup')
