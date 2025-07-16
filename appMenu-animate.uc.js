@@ -1,3 +1,4 @@
+alert("ExpandingMenu mod loaded!");
 // Expanding Popup ZenMenu for Sine/Zen
 (function() {
   // Log to confirm script is running
