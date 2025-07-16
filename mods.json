@@ -1,0 +1,7 @@
+{
+  "name": "Expanding Popup ZenMenu",
+  "description": "Animated expanding menu for Zen/Sine.",
+  "main": "appMenu-animate.uc.js",
+  "style": "chrome.css",
+  "version": "1.0.0"
+} 
