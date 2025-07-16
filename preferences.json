@@ -11,11 +11,6 @@
       "min": 100,
       "max": 2000,
       "step": 10
-    },
-    "forceOverride": {
-      "type": "boolean",
-      "label": "Force Override Animation CSS",
-      "default": true
     }
   }
 } 

@@ -1,8 +1,8 @@
 @import "agent_style.uc.css";
 
-.zen-popup-animating {
-  transition: height 0.35s cubic-bezier(0.4, 0.2, 0.55, 1);
-  will-change: height;
+#PanelUI-popup.zen-popup-animating {
+  transition: height 350ms cubic-bezier(0.4, 0.2, 0.55, 1) !important;
+  will-change: height !important;
   overflow: hidden !important;
 }
 
