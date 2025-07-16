@@ -1,7 +1,6 @@
 {
-  "name": "Expanding Popup ZenMenu",
-  "description": "Animated expanding menu for Zen/Sine.",
-  "main": "appMenu-animate.uc.js",
-  "style": "chrome.css",
+  "name": "Test Mod",
+  "description": "Minimal test mod for Sine/Zen.",
+  "main": "testmod.uc.js",
   "version": "1.0.0"
 } 
