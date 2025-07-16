@@ -1,1 +1,11 @@
-@import "agent_style.uc.css"; 
+@import "agent_style.uc.css";
+
+.zen-popup-animating {
+  transition: height 0.35s cubic-bezier(0.4, 0.2, 0.55, 1);
+  will-change: height;
+  overflow: hidden !important;
+}
+
+.zen-popup-expanded {
+  /* Optional: add visual effect if desired */
+} 
